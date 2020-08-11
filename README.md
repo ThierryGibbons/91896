@@ -1,5 +1,6 @@
 # PureO2
 A VR interface which operates within openVR
+![PureO2 Git Banner](https://trello-attachments.s3.amazonaws.com/5ec5e6c16f1dae73a1c2718c/5f323230e2081626cd21d8d8/037b788d51de276bb301fa06a99b65ad/pureO2_main_board.png)
 
 ### 91896
 NZQA: Use advanced programming techniques to develop a computer program ([91896](https://www.nzqa.govt.nz/ncea/assessment/view-detailed.do?standardNumber=91896)) 
