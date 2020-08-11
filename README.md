@@ -7,4 +7,6 @@ NZQA: Use advanced programming techniques to develop a computer program ([91896]
 ### Documentation
 Documentation for the project is available on the [Github Wiki](https://github.com/ThierryGibbons/91896/wiki)
 
+Trello board for the project is avaliable at [PureO2 - 91896](https://trello.com/b/tYrkZwqu/pureo2-91896)
+
 Documentation for openVR is available on at [openvr-sdk](https://github.com/ValveSoftware/openvr#openvr-sdk)
