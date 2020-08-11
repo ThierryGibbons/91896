@@ -1,4 +1,4 @@
-# Pure o2
+# PureO2
 A VR interface which operates within openVR
 
 ### 91896
