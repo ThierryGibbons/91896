@@ -1,15 +1,21 @@
-/*jshint esversion: 8 */
-
 /**
 *
+* @name externalControls
+* @version 0.0.1
+* @description Control discord though external inputs
 *
+* @authorLink https://twitter.com/LehsssVR
+* @website https://github.com/ThierryGibbons/91896/tree/master/BDPlugins
+* @source https://raw.githubusercontent.com/ThierryGibbons/91896/master/BDPlugins/externalControls.plugin.js
 *
 */
+
+/*jshint esversion: 8 */
 
 module.exports = (() => {
     const config = {info:{name:"externalControls",authors:[{name:"Lehsss",discord_id:"262757496685330445",github_username:"ThierryGibbons",twitter_username:"LehsssVR"}],version:"0.0.1",description:"Control discord though external inputs",github:"https://github.com/ThierryGibbons/91896/tree/master/BDPlugins/externalControls",github_raw:"https://raw.githubusercontent.com/ThierryGibbons/91896/master/BDPlugins/externalControls/externalControls.plugin.js"},changelog:[{title:"Chur", type:"chur",items:["run faster","dont walk"]}],main:"index.js"};
 
-    return !global.LehsssPluginLibrary ? class {
+    return !global.ZeresPluginLibrary ? class {
       constructor() {this._config = config;}
       getName() {return config.info.name;}
       getAuthor() {return config.info.authors.map(a => a.name).join(",");}
@@ -80,5 +86,5 @@ module.exports = (() => {
     };
 };
         return plugin(Plugin, Api);
-    })(global.LehsssPluginLibrary.buildPlugin(config));
+    })(global.ZeresPluginLibrary.buildPlugin(config));
 })();
