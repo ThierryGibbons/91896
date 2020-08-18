@@ -1,8 +1,6 @@
 /**
 *
-* @name externalControls
-* @version 0.0.1
-* @description Control discord though external inputs
+*
 *
 * @authorLink https://twitter.com/LehsssVR
 * @website https://github.com/ThierryGibbons/91896/tree/master/BDPlugins
