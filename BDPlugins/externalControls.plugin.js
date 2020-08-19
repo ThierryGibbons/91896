@@ -1,7 +1,5 @@
 /**
 *
-*
-*
 * @authorLink https://twitter.com/LehsssVR
 * @website https://github.com/ThierryGibbons/91896/tree/master/BDPlugins
 * @source https://raw.githubusercontent.com/ThierryGibbons/91896/master/BDPlugins/externalControls.plugin.js
