@@ -53,7 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\serverSpeak\localhostComs.cs" />
+     <Compile Include="Assets\serverSpeak\_Leaderboards.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/thier/Documents/GitHub/91896/comsWorld/comsWorld/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
