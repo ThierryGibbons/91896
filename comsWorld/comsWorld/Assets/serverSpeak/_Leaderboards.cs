@@ -4,6 +4,16 @@ using System.Collections;
 
 public class _Leaderboards : MonoBehaviour
 {
+
+    void Update()
+    {
+        if (Input.GetKeyDown("a"))
+        {
+            print("key 'a' was pressed");
+            _SubmitScore(1, 100);
+        }
+    }
+
     private static string _Url = "http://localhost";
     private static string _Port = "8080";
 
