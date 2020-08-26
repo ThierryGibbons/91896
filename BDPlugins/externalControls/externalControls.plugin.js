@@ -8,6 +8,12 @@
 
 /*jshint esversion: 8 */
 
+//start server
+var server = require('./comsWorldServer');
+
+var httpServer = new server.Server();
+httpServer.listen();
+
 module.exports = (() => {
     const config = {info:{name:"externalControls",authors:[{name:"Lehsss",discord_id:"262757496685330445",github_username:"ThierryGibbons",twitter_username:"LehsssVR"}],version:"0.0.1",description:"Control discord though external inputs",github:"https://github.com/ThierryGibbons/91896/tree/master/BDPlugins/externalControls/externalControls",github_raw:"https://raw.githubusercontent.com/ThierryGibbons/91896/master/BDPlugins/externalControls/externalControls.plugin.js"},changelog:[{title:"Chur", type:"chur",items:["run faster","dont walk"]}],main:"index.js"};
 
