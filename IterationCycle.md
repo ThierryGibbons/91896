@@ -1,8 +1,25 @@
 # Iteration Cycle
 >NCEA Standard - 91897
 
+- [All master commits](https://github.com/ThierryGibbons/91896/commits/master)
+
 ## Iteration One
->[June 26, 2020 - Aug 27,2020](https://github.com/ThierryGibbons/91896/commits?author=ThierryGibbons&since=2020-06-26&until=2020-08-27)
+>[June 26, 2020 - Aug 28, 2020](https://github.com/ThierryGibbons/91896/commits?author=ThierryGibbons&since=2020-06-26&until=2020-08-28)
+
+### Tasks:
+*June 26 - June 28*
+>**Create** basic BDPlugin
+>>Adds a new button to the screen and reacts to it being pressed
+>
+>**Create** basic Unity3D project
+>>reacts to a keyboard press
+>
+>**Create** basic localhost component
+>>Unity and BD to talk with each other
+
+#### TODO's:
+*June 28*
+>__TODO:__ *externalControls.plugin.js* send data to unity through *comsWorldServer.js*
 
 ### Commits
 
@@ -27,6 +44,7 @@
 - **Pulled** *localhost component* for unity to communicate with BD
 >Aug 27, 2020
 
-___
+- **Created** *IterationCycle.md*
+>[Aug 28, 2020 ~](https://github.com/ThierryGibbons/91896/commits?author=ThierryGibbons&since=2020-08-28)
 
-## Iteration Two
+___
