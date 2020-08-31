@@ -17,9 +17,23 @@
 >**Create** basic localhost component
 >>Unity and BD to talk with each other
 
-#### TODO's:
+#### TODO:
 *June 28*
 >__TODO:__ *externalControls.plugin.js* send data to unity through *comsWorldServer.js*
+
+#### NOTES
+*June 29*
+>>__FIXME:__  *comsWorldServer.js* isnt able to post to http server
+>
+>>__Worked on:__ *comsWorldServer.js* & *runServer.js*, still not able to get a working version of node.js posting an http.request
+>>>`SyntaxError: await is only valid in async function`
+>
+>>__Note:__ haven't commited any changes because I still haven't found a fix.
+>>
+>>This is now causing a block
+
+*June 31*
+>>**Fixed:** `SyntaxError: await is only valid in async function`
 
 ### Commits
 
