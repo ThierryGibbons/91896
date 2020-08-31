@@ -1,6 +1,7 @@
 "use strict";
 
-/*jshint esversion: 8 */
+/*jshint esversion: 9 */
+/*jshint node: true */
 
 var http = require("http");
 
@@ -12,6 +13,8 @@ class Server
         this.ip = "localhost";
 
         this.start();
+
+
     }
 
     start()
@@ -23,10 +26,42 @@ class Server
 
         this.server.on("clientError", (err, socket) =>
         {
-            socket.end("HTTP/1.1 400 Bad Request\r\n\r\n");
+            socket.end("http/1.1 400 Bad Request\r\n\r\n");
         });
         console.log("Server created");
     }
+
+
+    //FIXME
+    //post cool stuff
+    post({body, ...options}) {
+        return new Promise((resolve,reject) => {
+          const req = http.request({
+              method: 'POST',
+              ...options,
+          }, res => {
+            const chunks = [];
+            res.on('data', data => chunks.push(data));
+            res.on('end', () => {
+              let body = Buffer.concat(chunks);
+              switch(res.headers['content-type']) {
+                  case 'application/json':
+                    body = JSON.parse(body);
+                    break;
+              }
+              resolve(body);
+            });
+          });
+          req.on('error', reject);
+          if(body) {
+            req.write(body);
+          }
+          req.end();
+        })
+        .catch(console.log("I caught it 2"));
+    }
+
+
 
     listen()
     {
@@ -73,7 +108,7 @@ class Server
         }
         else
         {
-            // Tell Unity that the HTTP method was not allowed
+            // Tell Unity that the http method was not allowed
             res.writeHead(405, "Method Not Allowed", {"Content-Type": "text/html"});
             res.end("Error 405");
         }
