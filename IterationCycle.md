@@ -33,7 +33,11 @@
 >>This is now causing a block
 
 *June 31*
->>**Fixed:** `SyntaxError: await is only valid in async function`
+>>__Fixed:__ `SyntaxError: await is only valid in async function`
+>
+>>__BLOCK!!:__ error stoping me from posting to server within *comsWorldServer.js*
+>>>`UnhandledPromiseRejectionWarning: Error: connect ECONNREFUSED 127.0
+.0.1:80`
 
 ### Commits
 
