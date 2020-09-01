@@ -24,6 +24,9 @@ async function _post() {
     })
   })
   .catch(console.log("i caught it!!"));
+  console.log("async done ig?");
 }
 
 _post();
+
+console.log("last line of runServer.js");

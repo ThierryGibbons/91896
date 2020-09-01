@@ -57,6 +57,7 @@ class Server
             req.write(body);
           }
           req.end();
+          console.log("endeeeed");
         })
         .catch(console.log("I caught it 2"));
     }
