@@ -7,29 +7,30 @@ public class _Leaderboards : MonoBehaviour
 
     void Update()
     {
+        // submit yeahNah amount 1
         if (Input.GetKeyDown("a"))
         {
             print("key 'a' was pressed");
-            _SubmitScore(1, 100);
+            _SubmitMsg(1);
+            // TODO: Submit a chosen amount of 'yeahNah' through a selector.
         }
     }
 
     private static string _Url = "http://localhost";
     private static string _Port = "8080";
 
-    public void _SubmitScore(int which, int score)
+    public void _SubmitMsg(int yeahNah)
     {
-        StartCoroutine(_SubmitScoreToServer(which, score));
+        StartCoroutine(_SubmitMsgToServer(yeahNah));
     }
 
-    private IEnumerator _SubmitScoreToServer(int which, int score)
+    private IEnumerator _SubmitMsgToServer(int yeahNah)
     {
-        Debug.Log("Submitting score");
+        Debug.Log("Submitting yeahNah");
 
         // Create a form that will contain our data
         WWWForm form = new WWWForm();
-        form.AddField("which", which.ToString());
-        form.AddField("score", score.ToString());
+        form.AddField("yeahNah", yeahNah.ToString());
 
         // Create a POST web request with our form data
         UnityWebRequest www = UnityWebRequest.Post(_Url + ":" + _Port, form);
