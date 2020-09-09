@@ -1,6 +1,7 @@
 "use strict";
 
 /*jshint esversion: 8 */
+/*jshint node: true */
 
 var http = require("http");
 
@@ -56,7 +57,7 @@ class Server
             req.on("end", () =>
             {
                 // Now that we have all data from the client, we process it
-                console.log("Received data: " + body);
+                //  console.log("Received data: " + body);
                 // Split the key / pair values and print them out
                 var vars = body.split("&");
                 for (var t = 0; t < vars.length; t++)
@@ -64,7 +65,7 @@ class Server
                     var pair = vars[t].split("=");
                     var key = decodeURIComponent(pair[0]);
                     var val = decodeURIComponent(pair[1]);
-                    console.log(key + ":" + val);
+                    console.log(key + ", " + val + " to go thanks.");
                 }
                 // Tell Unity that we received the data OK
                 res.writeHead(200, {"Content-Type": "text/plain"});
