@@ -4,24 +4,20 @@
 - [All master commits](https://github.com/ThierryGibbons/91896/commits/master)
 
 ## Iteration One
->[June 26, 2020 - Aug 28, 2020](https://github.com/ThierryGibbons/91896/commits?author=ThierryGibbons&since=2020-06-26&until=2020-08-28)
+*June 26, 2020 - Aug 28, 2020*
 
 ### Tasks:
-*June 26 - June 28*
->**Create** basic BDPlugin
->>Adds a new button to the screen and reacts to it being pressed
->
->**Create** basic Unity3D project
->>reacts to a keyboard press
->
->**Create** basic localhost component
->>Unity and BD to talk with each other
+- **Create** basic BDPlugin
+Adds a new button to the screen and reacts to it being pressed
 
-#### TODO's:
-*June 28*
->__TODO:__ *externalControls.plugin.js* send data to unity through *comsWorldServer.js*
+- **Create** basic Unity3D project
+>reacts to a keyboard press
+
+- **Create** basic localhost component
+>Unity and BD to talk with each other
 
 ### Commits
+[June 26, 2020 - Aug 28, 2020](https://github.com/ThierryGibbons/91896/commits?author=ThierryGibbons&since=2020-06-26&until=2020-08-28)
 
 - Initial Commit
 >Jun 26, 2020
@@ -45,6 +41,21 @@
 >Aug 27, 2020
 
 - **Created** *IterationCycle.md*
->[Aug 28, 2020 ~](https://github.com/ThierryGibbons/91896/commits?author=ThierryGibbons&since=2020-08-28)
+>Aug 28, 2020
 
 ___
+
+
+# Iteration Two
+>[date - date](insert link here)
+
+### Tasks
+*date - date*
+- **Create** multiple variable options to send between unity and discord
+>Sends a variety of variables from unity to discord
+
+- **Create** basic VR interface with a few buttons
+>Sends input to discord
+
+- **Create** discord server text channel display
+>Use a [discord webhook](https://docs.unity3d.com/Manual/UnityIntegrations.html) within unity
