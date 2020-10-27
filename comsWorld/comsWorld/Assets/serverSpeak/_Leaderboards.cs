@@ -16,14 +16,17 @@ public class _Leaderboards : MonoBehaviour
         }
     }
 
+    //set the url and port where the server is located
     private static string _Url = "http://localhost";
     private static string _Port = "8080";
 
+    //function that creates then sends message to Server
     public void _SubmitMsg(int yeahNah)
     {
         StartCoroutine(_SubmitMsgToServer(yeahNah));
     }
 
+    //sends message to server here
     private IEnumerator _SubmitMsgToServer(int yeahNah)
     {
         Debug.Log("Submitting yeahNah");

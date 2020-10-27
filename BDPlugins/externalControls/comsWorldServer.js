@@ -3,18 +3,23 @@
 /*jshint esversion: 8 */
 /*jshint node: true */
 
+//tell the program to use external library(http) whenever http is mentioned
 var http = require("http");
 
+//create class called Server
 class Server
 {
+    //set local http server preferences
     constructor()
     {
         this.port = 8080;
         this.ip = "localhost";
 
+        //call start function within this class
         this.start();
     }
 
+    //start server when server called apon
     start()
     {
         this.server = http.createServer((req, res) =>
@@ -29,12 +34,14 @@ class Server
         console.log("Server created");
     }
 
+    //function that logs everything sent over the set port and ip for the server
     listen()
     {
         this.server.listen(this.port, this.ip);
         console.log("Server listening for connections");
     }
 
+    //when a post request is sent over the server, the request is processed here
     processRequest(req, res)
     {
         // Process the request from the client
