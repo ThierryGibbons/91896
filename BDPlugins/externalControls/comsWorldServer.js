@@ -65,6 +65,10 @@ class Server {
                             console.log(val + ": IRL key 'a' pressed");
                         } else if (key == 2) {
                             console.log(val + ": now Active");
+                        } else if (key == 3) {    //process basic test request
+                            console.log(val + ": running basic test");
+                            res.writeHead(128, {"Content-Type": "text/plain"});
+                            res.end("basic test complete");
                         }
                     }
                 }
