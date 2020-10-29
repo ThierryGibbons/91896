@@ -3,6 +3,8 @@
 /*jshint esversion: 8 */
 /*jshint node: true */
 
+var client = require('discord-rich-presence')('771318173202251777');
+
 //tell the program to use external library(http) whenever http is mentioned
 var http = require("http");
 
@@ -64,7 +66,11 @@ class Server {
                         if (key == 1) {
                             console.log(val + ": IRL key 'a' pressed");
                         } else if (key == 2) {
+
                             console.log(val + ": now Active");
+                            res.writeHead(128, {"Content-Type": "text/plain"});
+                            res.end("VR Connected!!!");
+
                         } else if (key == 3) {    //process basic test request
                             console.log(val + ": running basic test");
                             res.writeHead(128, {"Content-Type": "text/plain"});
@@ -72,9 +78,16 @@ class Server {
                         }
                     }
                 }
+
+
                 // Tell Unity that we received the data OK
                 res.writeHead(200, {"Content-Type": "text/plain"});
                 res.end("OK");
+
+                // Tell discord 'VR Connected'
+                client.updatePresence({state: body, details: '🥽'});
+                console.log("VR Connected");
+
             });
         }
         else {
@@ -82,6 +95,18 @@ class Server {
             res.writeHead(405, "Method Not Allowed", {"Content-Type": "text/html"});
             res.end("Error 405");
         }
+    }
+
+    discordRP(onlineStatus) {
+        client.updatePresence({
+          state: onlineStatus,
+          details: '🐍',
+          //startTimestamp: Date.now(),       // to show amount of time with program open
+          //endTimestamp: Date.now() + 1337,
+          //largeImageKey: 'snek_large',      // incase i want to add an image to the status message on discord
+          //smallImageKey: 'snek_small',      //  "
+          instance: true,
+        });
     }
 
 }
