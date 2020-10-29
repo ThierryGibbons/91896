@@ -22,6 +22,12 @@ public class _Leaderboards : MonoBehaviour
             _SubmitMsg(1);
             // TODO: Submit a chosen amount of 'yeahNah' through a selector.
         }
+        //run basic test
+        if (Input.GetKeyDown("s"))
+        {
+          print("key 's' was pressed\nrunning basic test");
+          _SubmitMsg(3);
+        }
     }
 
     //set the url and port where the server is located
@@ -59,6 +65,12 @@ public class _Leaderboards : MonoBehaviour
             {
                 // Response code 200 signifies that the server had no issues with the data we went
                 Debug.Log("Form sent complete!");
+                Debug.Log("Response:" + www.downloadHandler.text);
+            }
+            if (www.responseCode == 128)
+            {
+                //comsWorldServer.js data output
+                Debug.Log("Basic test complete!");
                 Debug.Log("Response:" + www.downloadHandler.text);
             }
             else
