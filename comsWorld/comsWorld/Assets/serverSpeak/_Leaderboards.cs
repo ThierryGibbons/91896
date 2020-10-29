@@ -70,7 +70,7 @@ public class _Leaderboards : MonoBehaviour
             if (www.responseCode == 128)
             {
                 //comsWorldServer.js data output
-                Debug.Log("Basic test complete!");
+                Debug.Log("cool data");
                 Debug.Log("Response:" + www.downloadHandler.text);
             }
             else
