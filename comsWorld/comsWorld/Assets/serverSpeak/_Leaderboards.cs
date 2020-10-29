@@ -5,6 +5,14 @@ using System.Collections;
 public class _Leaderboards : MonoBehaviour
 {
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        print("'_Leaderboards.cs' is active");
+        _SubmitMsg(2);
+    }
+
+    // Update is called once per frame
     void Update()
     {
         // submit yeahNah amount 1
@@ -33,7 +41,15 @@ public class _Leaderboards : MonoBehaviour
 
         // Create a form that will contain our data
         WWWForm form = new WWWForm();
-        form.AddField("yeahNah", yeahNah.ToString());
+        if (yeahNah == 1)
+        {
+          form.AddField("_Leaderboards.cs", yeahNah.ToString());
+        }
+        if (yeahNah == 2)
+        {
+          form.AddField("_Leaderboards.cs", yeahNah.ToString());
+        }
+
 
         // Create a POST web request with our form data
         UnityWebRequest www = UnityWebRequest.Post(_Url + ":" + _Port, form);
