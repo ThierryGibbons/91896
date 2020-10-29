@@ -60,7 +60,13 @@ class Server {
                     var pair = vars[t].split("=");
                     var key = decodeURIComponent(pair[0]);
                     var val = decodeURIComponent(pair[1]);
-                    console.log(key + ", " + val + " to go thanks.");
+                    if (val == "_Leaderboards.cs") {    //check the name of program sending data is _Leaderboards.cs
+                        if (key == 1) {
+                            console.log(val + ": IRL key 'a' pressed");
+                        } else if (key == 2) {
+                            console.log(val + ": now Active");
+                        }
+                    }
                 }
                 // Tell Unity that we received the data OK
                 res.writeHead(200, {"Content-Type": "text/plain"});
