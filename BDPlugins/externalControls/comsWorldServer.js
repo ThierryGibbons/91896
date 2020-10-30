@@ -37,6 +37,19 @@ class Server {
         console.log("Server listening for connections");
     }
 
+    // text that is displayed when program is started
+    textShowcase() {
+        console.log("----------");
+        console.log("  PureO2");
+        console.log("----------");
+        var i = 1;
+        while (i < 10) {
+            console.log("" + "\n");
+            i = i += 1;
+        }
+
+    }
+
     //when a post request is sent over the server, the request is processed here
     processRequest(req, res) {
         // Process the request from the client
