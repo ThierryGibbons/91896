@@ -44,6 +44,8 @@ class Server {
         if (req.method === "POST") {
             // Post data may be sent in chunks so need to build it up
             var body = "";
+            var key = "";   // define variable as global
+            var val = "";   // "
             req.on("data", (data) => {
                 body += data;
                 // Prevent large files from benig posted
@@ -60,8 +62,8 @@ class Server {
                 var vars = body.split("&");
                 for (var t = 0; t < vars.length; t++) {
                     var pair = vars[t].split("=");
-                    var key = decodeURIComponent(pair[0]);
-                    var val = decodeURIComponent(pair[1]);
+                    key = decodeURIComponent(pair[0]);
+                    val = decodeURIComponent(pair[1]);
                     if (val == "_Leaderboards.cs") {    //check the name of program sending data is _Leaderboards.cs
                         if (key == 1) {
                             console.log(val + ": IRL key 'a' pressed");
@@ -85,7 +87,7 @@ class Server {
                 res.end("OK");
 
                 // Tell discord 'VR Connected'
-                client.updatePresence({state: body, details: '🥽'});
+                client.updatePresence({state: "chur " + val, details: '🥽'});
                 console.log("VR Connected");
 
             });
