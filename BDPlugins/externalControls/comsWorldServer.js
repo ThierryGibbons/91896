@@ -73,6 +73,7 @@ class Server {
                 //  console.log("Received data: " + body);
                 // Split the key / pair values and print them out
                 var vars = body.split("&");
+                console.log(vars);
                 for (var t = 0; t < vars.length; t++) {
                     var pair = vars[t].split("=");
                     key = decodeURIComponent(pair[0]);
@@ -99,9 +100,31 @@ class Server {
                 res.writeHead(200, {"Content-Type": "text/plain"});
                 res.end("OK");
 
-                // Tell discord 'VR Connected'
-                client.updatePresence({state: "chur " + val, details: '🥽'});
-                console.log("VR Connected");
+                // Tell discord 'VR Online' + VR message
+                var vrMsg = "";   // clear previous VR message
+                var vrStatus = "";
+                var irlKey_bool;
+                var irlKey = "";
+                if (val == 2) {
+                    vrStatus = "💚";
+                    irlKey_bool = "false";
+                    console.log("pinged");
+                } else if (val == 1) {
+                  if (irlKey_bool == "true") {
+                    irlKey = "IRL Keyboard: 🖤";
+                    irlKey_bool = "false";
+                  } else if (irlKey_bool == "false") {
+                    irlKey = "IRL Keyboard: 💚";
+                    irlKey_bool = "true";
+                  }   //FIXME: causing error whith else statements not making sense
+                } else {
+                  irlKey = "error";
+                  irlKey_bool = "false";
+                }
+
+                vrMsg = vrStatus + "" + irlKey;
+                client.updatePresence({state: "VR Online: " + vrMsg, details: '🥽'});
+                console.log("VR Online" + " - " + irlKey);
 
             });
         }
@@ -113,15 +136,14 @@ class Server {
     }
 
     discordRP(onlineStatus) {
-        client.updatePresence({
-          state: onlineStatus,
-          details: '🐍',
-          //startTimestamp: Date.now(),       // to show amount of time with program open
-          //endTimestamp: Date.now() + 1337,
-          //largeImageKey: 'snek_large',      // incase i want to add an image to the status message on discord
-          //smallImageKey: 'snek_small',      //  "
-          instance: true,
-        });
+        if (onlineStatus == "comsWorldServer Active") {
+            client.updatePresence({
+              status: "VR Offline",
+              details: "️🖤",
+              instance: true,
+            });
+        }
+
     }
 
 }
