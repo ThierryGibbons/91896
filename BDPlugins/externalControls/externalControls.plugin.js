@@ -8,26 +8,43 @@
 
 /*jshint esversion: 8 */
 
-//start server
-var server = require('./comsWorldServer');
-
-var httpServer = new server.Server();
-httpServer.listen();
+// //start server
+// var server = require('./comsWorldServer');
+//
+// var httpServer = new server.Server();
+// httpServer.listen();
 
 module.exports = (() => {
     const config = {info:{name:"externalControls",authors:[{name:"Lehsss",discord_id:"262757496685330445",github_username:"ThierryGibbons",twitter_username:"LehsssVR"}],version:"0.0.1",description:"Control discord though external inputs",github:"https://github.com/ThierryGibbons/91896/tree/master/BDPlugins/externalControls/externalControls",github_raw:"https://raw.githubusercontent.com/ThierryGibbons/91896/master/BDPlugins/externalControls/externalControls.plugin.js"},changelog:[{title:"Chur", type:"chur",items:["run faster","dont walk"]}],main:"index.js"};
 
-    return !global.ZeresPluginLibrary ? class {
+    return !global.LehsssBDPluginLibrary ? class {
       constructor() {this._config = config;}
       getName() {return config.info.name;}
       getAuthor() {return config.info.authors.map(a => a.name).join(",");}
       getDescription() {return config.info.description;}
       getVersion() {return config.info.version;}
+      // show menu
       load() {
-          BdApi.showConfirmationModal("Library Missing", `The library plugin needed for ${config.info.name} is missing. Please click Download Now to instal it.`, {
-              confirmText: "Download Now",
-              cancelText: "Cancel",
+          BdApi.showConfirmationModal("Watch Twitch?", `The creator of this program streams on twitch. Click Follow Now to goto their twitch page.`, {
+              confirmText: "Follow Now",
+              cancelText: "No Thanks",
               onConfirm: () => {
+                // open link to my twitch within browser
+                window.open("https://twitch.tv/lehsss", async (error, response, body) => {
+                  // report error with browser
+                  if (error) return BDApi.showConfirmationModal("Browser Failed", `You can try again or just go to twitch.tv/lehsss`, {
+                    confirmText: "Try Again",
+                    cancelText: "No Thanks",
+                    onConfirm: () => {
+                      // try to open link again
+                      window.open("https://twitch.tv/lehsss", async (error, response, body) => {
+                        if (error) return BDApi.showConfirmationModal("Browser Failed", `You can just go to twitch.tv/lehsss`, {
+                          cancelText: "Close"
+                        });
+                      });
+                    }
+                  });
+                });
                 require("request").get("https://rauenzi.github.io/BDPluginLibrary/release/0PluginLibrary.plugin.js", async (error, response, body) => {
                   if (error) return require("electron").shell.openExternal("https://betterdiscord.net/ghdl?url=https://raw.githubusercontent.com/rauenzi/BDPluginLibrary/master/release/0PluginLibrary.plugin.js");
                   await new Promise(r => require("fs").writeFile(require("path").join(BdApi.Plugins.folder, "0PluginLibrary.plugin.js"), body, r));
@@ -37,7 +54,7 @@ module.exports = (() => {
       }
       start() {}
       stop() {}
-    } : (([Plugin, Api]) => {         //From here down is not my code: Github user Zerebos, SendButton plugin
+    } : (([Plugin, Api]) => {         // Send Button interface
         const plugin = (Plugin, Api) => {
     const buttonHTML = `<div class="buttonContainer-28fw2U da-buttonContainer send-button">
     <button aria-label="Send Message" tabindex="0" type="button" class="buttonWrapper-1ZmCpA da-buttonWrapper button-38aScr da-button lookBlank-3eh9lL colorBrand-3pXr91 grow-q77ONN da-grow noFocus-2C7BQj da-noFocus">
@@ -50,6 +67,7 @@ module.exports = (() => {
     </button>
 </div>`;
 
+    // shortcut to press enter key
     const press = new KeyboardEvent("keydown", {key: "Enter", code: "Enter", which: 13, keyCode: 13, bubbles: true});
     Object.defineProperties(press, {keyCode: {value: 13}, which: {value: 13}});
 
@@ -88,5 +106,5 @@ module.exports = (() => {
     };
 };
         return plugin(Plugin, Api);
-    })(global.ZeresPluginLibrary.buildPlugin(config));
+    })(global.LehsssBDPluginLibrary.buildPlugin(config));
 })();
