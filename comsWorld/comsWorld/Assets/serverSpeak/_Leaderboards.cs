@@ -11,7 +11,7 @@ public class _Leaderboards : MonoBehaviour
     print("'_Leaderboards.cs' is active");
     _SubmitMsg(2);
   }
-  
+
   // Update is called once per frame
   void Update()
   {
@@ -20,7 +20,6 @@ public class _Leaderboards : MonoBehaviour
     {
       print("key 'a' was pressed");
       _SubmitMsg(1);
-      // TODO: Submit a chosen amount of 'yeahNah' through a selector.
     }
     //run basic test
     if (Input.GetKeyDown("s"))
